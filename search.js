@@ -1,4 +1,4 @@
-const API_URL = ""
+const API_URL = "https://api.freasearch.org/search?q="
 let url = new URL(window.location.href);
 let params = url.searchParams;
 document.getElementsByName('query')[0].value = params.get('q');
