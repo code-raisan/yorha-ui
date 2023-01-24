@@ -1,3 +1,4 @@
+const API_URL = ""
 let url = new URL(window.location.href);
 let params = url.searchParams;
 document.getElementsByName('query')[0].value = params.get('q');
@@ -23,7 +24,7 @@ function search() {
   const query = params.get('q')
   document.getElementsByName('status')[0].textContent = "Loading...";
 
-  fetch(`https://freasearch.org/search?q=${query}&format=json`)
+  fetch(API_URL+query)
   .then(function (data) {
     return data.json();
   })
