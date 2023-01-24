@@ -31,20 +31,20 @@ function search() {
   .then(function (api_result) {
     console.log(api_result);
 
-    for (var i = 0; i < api_result.results.length; i++) {
-      var div = document.createElement('div');
+    for (let i = 0; i < api_result.results.length; i++) {
+      const div = document.createElement('div');
       div.className = 'content';
 
-      var link = document.createElement('a');
+      const link = document.createElement('a');
       link.href = api_result.results[i].url;
 
-      var domain = document.createElement('small');
+      const domain = document.createElement('small');
       domain.textContent = api_result.results[i].parsed_url[1];
 
-      var title = document.createElement('h3');
+      const title = document.createElement('h3');
       title.textContent = api_result.results[i].title;
 
-      var context = document.createElement('p');
+      const context = document.createElement('p');
       context.textContent = api_result.results[i].content;
 
       div.appendChild(domain);
